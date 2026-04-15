@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNITED EMIRATE DECENTRALIZED COIN - $UEDCs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;700;900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png">
+  <meta property="og:title" content="UNITED EMIRATE DECENTRALIZED COIN - $UEDCs">
+  <meta property="og:description" content="UNITED EMIRATE DECENTRALIZED COIN - $UEDCs">
+  <meta property="og:image" content="logo.png">
+
+  <style>
+    :root{
+      --bg: #179bed;
+      --ink: #111111;
+      --panel: #8B4F09;
+      --card: #7B3F07;
+      --pill: #F2B24E;
+      --accent: #FFCE6A;
+      --edge: #000000;
+      --radius: 18px;
+      --radius-lg: 22px;
+      --border: 4px;
+      --font-display: 'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      --font-body: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      --font-hand: 'Kalam', 'Baloo 2', cursive, system-ui, sans-serif;
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{ margin:0; background: var(--bg); color: var(--ink); font-family: var(--font-body); letter-spacing:.2px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    .btn, .contract, .card, .facts li, .legal-box{
+      border: var(--border) solid var(--edge);
+      border-radius: var(--radius);
+      background: #FBD06E;
+      box-shadow: 0 6px 0 var(--edge), inset 0 -2px 0 rgba(0,0,0,.12);
+    }
+
+    .btn{ display:inline-block; background:#F7C54F; padding:10px 16px; border-radius:999px; font-weight:800; text-decoration:none; color:var(--ink); font-family: var(--font-display); transition: transform .06s ease; }
+    .btn:hover{ transform: translateY(-1px);} .btn:active{ transform: translateY(1px);} .btn.buy{ background:#FFE07A; } .btn.primary{ background:#ffd05c; margin-right:10px;} .btn.outline{ background:#FBF0C7; }
+
+    .hero{ display:flex; flex-direction:column; align-items:center; padding: 10px 18px 24px; }
+    .brand{ margin:16px 0 8px; font-family: var(--font-hand); font-weight:700; font-size:62px; line-height:1; letter-spacing:.5px;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color:#FFE8A9;
+    }
+    .hero-illustration{ width:260px; max-width:70vw; margin:6px auto 14px; border-radius: 50%; }
+
+    .contract{ display:flex; align-items:center; gap:10px; padding:10px 12px; background:#EFB14E; border-radius:999px; max-width:860px; }
+    .contract.small{ padding:10px 14px; }
+
+    .contract .label{ font-weight:900; font-family: var(--font-display); }
+    .contract .hash{ word-break: break-all; font-weight:700; letter-spacing:.25px; }
+    .contract .copy{ margin-left:auto; border: var(--border) solid var(--edge); border-radius:999px; background:#FFF3BF; font-weight:800; padding:6px 12px; cursor:pointer; }
+
+    .socials{ margin:16px 0 6px; display:flex; align-items:center; gap:18px; }
+    .socials a{ display: block; width: 38px; height: 38px; background: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; transition: transform 0.3s ease; }
+    .socials a:hover{ transform: scale(1.1); }
+
+    .hero-cta{ margin: 8px 0 0; display:flex; justify-content:center; }
+
+    .section{ padding:8px 18px 26px; }
+    .section h2{ text-align:center; margin:14px 0 12px; font-family: var(--font-display); font-size:28px;
+      text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000; color:#FFE8A9; }
+    .card{ background:#9E5F16; border-radius:22px; padding:18px; position:relative; }
+    .about-card{ max-width:920px; margin:0 auto; }
+    .poem{ color:#fff4e6; font-weight:800; font-size:20px; text-align:center; line-height:1.4;
+      text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000; font-family: var(--font-display); }
+
+    /* Tokenomics layout */
+    .token-card{ display:grid; grid-template-columns: 1.25fr 0.75fr; gap:16px; max-width:920px; margin:0 auto; align-items:center; }
+    .facts{ list-style:none; padding:0; margin:12px 0 0; display:grid; gap:10px; }
+    .facts li{ background:#F5C76B; padding:9px 12px; font-weight:800; overflow-wrap: break-word; word-wrap: break-word; }
+    .facts li span{ display:inline-block; min-width:92px; }
+    .token-right{ display:flex; align-items:center; justify-content:center; }
+    .coin{ width: 240px; height:auto; display:block; margin-top:14px; border-radius: 50%; }
+
+    .footer{ display:flex; justify-content:center; gap:12px; padding:22px 18px 10px; }
+    .legalbar{ display:flex; justify-content:center; padding: 10px 12px 28px; }
+    .legal-box{ background:#FBF0C7; padding: 8px 14px; font-weight:800; font-family: var(--font-display); font-size:13px; letter-spacing:.3px; }
+
+    /* Handwritten headings */
+    #about h2, #tokenomics h2{
+      font-family: var(--font-hand);
+      letter-spacing:.5px;
+    }
+
+    /* Responsive design */
+    .brand{ font-size: clamp(44px, 7vw, 80px); }
+    .hero-illustration{ width: clamp(200px, 36vw, 360px); }
+    .poem{ font-size: clamp(18px, 2.1vw, 22px); }
+    .coin{ width: clamp(190px, 26vw, 280px); margin-top: 8px; }
+
+    @media (max-width: 900px){
+      .token-card{ grid-template-columns: 1fr; }
+      .token-right{ display:flex; justify-content:center; }
+    }
+
+    @media (max-width: 780px){
+      .contract .hash{
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        line-height:1.2;
+        font-size: 14px;
+      }
+      .coin{ margin-top: 6px; }
+      .facts{ gap: 8px; }
+    }
+
+    @media (min-width: 901px){
+      .token-card{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Enhanced Mobile Responsiveness */
+    @media (max-width: 600px){
+      .hero{ padding: 8px 12px 20px; }
+      .brand{ margin: 12px 0 6px; }
+      .hero-illustration{ margin: 4px auto 12px; }
+      
+      .contract{ flex-direction: column; align-items: stretch; gap: 8px; padding: 12px; }
+      .contract .label{ text-align: center; }
+      .contract .hash{ text-align: center; font-size: 13px; }
+      .contract .copy{ margin-left: 0; width: 100%; text-align: center; padding: 8px 12px; }
+      
+      .socials{ gap: 14px; flex-wrap: wrap; justify-content: center; }
+      .socials a{ width: 42px; height: 42px; font-size: 20px; }
+      
+      .hero-cta{ width: 100%; padding: 0 12px; }
+      .btn.buy{ width: 100%; text-align: center; padding: 12px 20px; font-size: 16px; }
+      
+      .section{ padding: 6px 12px 20px; }
+      .section h2{ font-size: 24px; margin: 10px 0 10px; }
+      
+      .card{ padding: 14px; border-radius: 18px; overflow: hidden; }
+      .about-card h3{ font-size: 1.5rem !important; margin-bottom: 15px !important; }
+      .poem{ font-size: 16px; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; }
+      
+      .facts li{ padding: 8px 10px; font-size: 14px; word-break: break-all; }
+      .facts li span{ min-width: 80px; display: block; word-break: normal; }
+      
+      .footer{ flex-direction: column; gap: 10px; padding: 18px 12px 8px; }
+      .footer .btn{ width: 100%; text-align: center; margin: 0 !important; padding: 12px 16px; }
+      
+      .legalbar{ padding: 8px 12px 24px; }
+      .legal-box{ font-size: 11px; text-align: center; padding: 6px 10px; }
+      
+      .token-card{ gap: 12px; }
+      .coin{ margin-top: 4px; }
+    }
+
+    @media (max-width: 400px){
+      .brand{ font-size: 40px; }
+      .hero-illustration{ width: 180px; }
+      .contract .hash{ font-size: 12px; }
+      .poem{ font-size: 15px; }
+      .section h2{ font-size: 22px; }
+      .about-card h3{ font-size: 1.3rem !important; }
+      .socials a{ width: 38px; height: 38px; font-size: 18px; }
+    }
+  </style>
+
+  <style id="heading-font-fix">
+    #about h2, #tokenomics h2{
+      font-family: 'Kalam', 'Baloo 2', cursive, system-ui, sans-serif !important;
+      letter-spacing: .5px;
+    }
+  </style>
+
+</head>
+<body>
+  <main class="hero">
+    <h1 class="brand">$UEDCs</h1>
+    <img class="hero-illustration" src="logo.png" alt="Desertdoge" />
+    <div class="contract" id="contractBox">
+      <span class="label">Ca:</span>
+      <span class="hash" id="contractText"> 0xB12938c90A8165b556b41c27531183f11EBFF69C</span>
+      <button class="copy" id="copyBtn" aria-label="Copy contract">Copy</button>
+    </div>
+    <nav class="socials">
+      <a href="https://x.com/UnitedCoin36058" aria-label="X" target="_blank" rel="noopener">𝕏</a>
+      <a href="https://t.me/unitedemiratedecentralizedcoin" aria-label="Telegram" target="_blank" rel="noopener"><img src="telegram-icon.png" width="20px"/></a>
+      <a href="https://www.dextools.io/app/en/solana/pair-explorer/5kgfdkgiPB3AuE3peMrsiwGQzLRu9n7xHU1p9ER8rSuH?t=1760807469174" aria-label="Medium" target="_blank" rel="noopener">M</a>
+    </nav>
+    <!--
+    <div class="hero-cta">
+      <a class="btn buy" href="https://raydium.io/swap/?inputMint=sol&outputMint=0xB12938c90A8165b556b41c27531183f11EBFF69C" target="_blank" rel="noopener">Buy Now</a>
+    </div> -->
+    <div class="hero-cta">
+      <a class="btn buy" href="./staking/" target="_blank" rel="noopener">Stake</a>
+    </div>
+    
+  </main>
+
+  <section id="about" class="section">
+    <h2>$UEDCs</h2>
+    <div class="card about-card">
+      <h3 style="color: #FFE8A9; font-family: var(--font-hand); font-size: 2rem; margin-bottom: 20px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">United Emirate Decentralized Coin</h3>
+      <p class="poem">
+        🌐 United Emirate Decentralized Coin (UEDCs) is an open source, peer-to- peer, Anonymous Cryptocurrency created on the Excellent Binance Smart Chain based carefully developed by Industry experts based in the Middle East. The total supply is just 20M making it a huge potential for astronomical increase in price value making investors tons of profits trading and holding UEDCs. United Emirate Decentralized Coin (UEDCs) is the first Arab Decentralized cryptocurrency to be developed in the Middle east based on the binance blockchain.
+      </p>
+      <br/>
+      <div style="border: 2px solid #FFE8A9; border-radius: 20px; padding: 20px; background: rgba(0,0,0,0.2);">
+        <p class="poem">
+
+ <strong>Name :</strong>  United Emirate Decentralized Coin</br>
+
+ <strong>Symbol :</strong>  UEDCs</br>
+
+<strong>Total Supply :</strong>  20.000.0000</br>
+
+<strong>Address :</strong>   0xB12938c90A8165b556b41c27531183f11EBFF69C </br> 
+
+<strong>Tax :</strong>   0</br>
+No Taxes Forever,</br>
+No None Sense,</br>
+LP Tokens Burned & Contract Ownership Renounced</br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>How to buy</h2>
+    <div class="card about-card">
+      <h3 style="color: #FFE8A9; font-family: var(--font-hand); font-size: 2rem; margin-bottom: 20px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">United Emirate Decentralized Coin</h3>
+      <p class="poem">
+        To buy $UEDCs, please send BNB in BNB chain directly to the token contract, UEDCs will be tranferred to your address immediately
+      <br/>
+      <div style="border: 2px solid #FFE8A9; border-radius: 20px; padding: 20px; background: rgba(0,0,0,0.2);">
+        <p class="poem">
+        <strong>Address :</strong> </p>
+        <div class="contract" id="contractBox2">
+          <span class="label">Ca:</span>
+          <span class="hash" id="contractText2"> 0xB12938c90A8165b556b41c27531183f11EBFF69C</span>
+          <button class="copy" id="copyBtn2" aria-label="Copy contract">Copy</button>
+        </div>
+      <p class="poem">
+        <strong>Price :</strong> 1BNB = 60000 UEDCs and 20% bonus</br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section">
+    <h2>Roadmap</h2>
+    <div class="card about-card">
+      <img src="logo2.png" alt="Roadmap" style="width: 100%; border-radius: 15px; margin-bottom: 20px;">
+      <p class="poem" style="text-align: left;">
+
+<strong style="font-size: 1.5em; color: black;">Phase 1- April 2026</strong></br>
+
+√ Official website launched & smart contract deployed</br>
+
+√ Social media sites (twitter, telegram, etc.) launched</br>
+
+√ UEDCs listed on Radium</br>
+
+√ Second UEDCs marketing campaign</br>
+
+<strong style="font-size: 1.5em; color: black;">Phase 2- June 2026</strong></br>
+
+√ UEDCs Listed on Mexc, binance, huobi and coinbase exchanges.</br>
+
+<strong style="font-size: 1.5em; color: black;">Phase 3 - August 2026</strong></br>
+> UEDCs Coin platform launched</br>
+> Launch swap platform and staking program </br>
+>
+
+<strong style="font-size: 1.5em; color: black;">Phase 4 -  October 2026</strong></br>
+> Become the Largest, Lowerate, and most comprehensive cross-blockchain Exchange</br>
+> Launch of mobile apps and DEFI wallet</br>
+> More functions, more activities in planning</br>
+      </p>
+    </div>
+  </section>
+
+  <section id="tokenomics" class="section">
+    <h2>Tokenomics</h2>
+    <div class="card token-card">
+      <div class="token-left">
+        <img src="logo.png" alt="Desertdoge Character" style="width: 100%; border-radius: 15px; margin-bottom: 20px;">
+        <ul class="facts">
+          <li><span>Name:</span> United Emirate Decentralized Coin</li>
+          <li><span>Symbol:</span> $UEDCs</li>
+          <li><span>Total Supply:</span> 20,000,000</li>
+          <li><span>Address:</span> 0xB12938c90A8165b556b41c27531183f11EBFF69C</li>
+          <li><span>Tax:</span> 0/0%</li>
+          <li><span>Liquidity:</span> Locked</li>
+          <li><span>Contract:</span> Renounced</li>
+        </ul>
+        <p class="poem" style="margin-top: 20px; font-size: 18px;">
+          No Taxes Forever, No None Sense<br/>
+          LP Tokens Burned & Contract Ownership Renounced
+        </p>
+      </div>
+      <div class="token-right">
+        <img class="coin" src="logo.png" alt="Desertdoge Token" />
+      </div>
+    </div>
+  </section>
+<!--
+  <section class="section" style="text-align: center;">
+    <h2>$UEDCs</h2>
+    <div style="margin: 30px 0;">
+      <a class="btn buy" href="https://raydium.io/swap/?inputMint=sol&outputMint=0xB12938c90A8165b556b41c27531183f11EBFF69C" style="font-size: 20px; padding: 15px 40px;">BUY NOW</a>
+    </div>
+  </section>
+
+  <footer id="buy" class="footer">
+    <a class="btn primary" href="https://raydium.io/swap/?inputMint=sol&outputMint=0xB12938c90A8165b556b41c27531183f11EBFF69C" target="_blank" rel="noopener">Buy on Radium</a>
+    <a class="btn outline" href="https://solscan.io/token/0xB12938c90A8165b556b41c27531183f11EBFF69C" target="_blank" rel="noopener">Check on Solana</a>
+    <a class="btn outline" href="https://raydium.io/swap/?inputMint=sol&outputMint=0xB12938c90A8165b556b41c27531183f11EBFF69C" target="_blank" rel="noopener">Chart</a>
+  </footer>
+-->
+  <footer class="legalbar">
+    <div class="legal-box">United Emirate Decentralized Coin - Copyright © 2026 All rights reserved
+    </br>
+    Email: support@unitedmeiratedecentralizedcoin.com
+
+    </div>
+  </footer>
+
+  <script>
+    // Copy contract
+    const copyBtn=document.getElementById('copyBtn');
+    if(copyBtn){
+      copyBtn.addEventListener('click',()=>{
+        const txt=document.getElementById('contractText').textContent.trim();
+        navigator.clipboard.writeText(txt);
+        copyBtn.textContent='Copied!';
+        setTimeout(()=>copyBtn.textContent='Copy',1400);
+      });
+    }
+
+    const copyBtn2=document.getElementById('copyBtn2');
+    if(copyBtn2){
+      copyBtn2.addEventListener('click',()=>{
+        const txt2=document.getElementById('contractText2').textContent.trim();
+        navigator.clipboard.writeText(txt2);
+        copyBtn2.textContent='Copied!';
+        setTimeout(()=>copyBtn2.textContent='Copy',1400);
+      });
+    }
+
+    // Alternative copy function
+    function copy() {
+      navigator.clipboard.writeText("0xf211e23022ae0b820e511331efab4f28852024b0");
+      alert("Copied the address: 0xf211e23022ae0b820e511331efab4f28852024b0");
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
