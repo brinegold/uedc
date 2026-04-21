@@ -156,7 +156,7 @@ button:focus {
 }
 
 .Referral {
-    color: #FBAE2A;
+    color: black;
     font-weight: bold;
     margin-top: 15px;
 }
@@ -218,7 +218,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.1;
-    color: #FBAE2A;
+    color: black;
     
 }
 
@@ -536,7 +536,7 @@ nav {
     height: 28px;
     padding: 0px 8px;
     font-size: 14px;
-    color: #aa9bb3;
+    color: black;
     background: #02cdff;
     border: 2px solid #aa9bb3;
 }
