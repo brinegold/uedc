@@ -1077,7 +1077,8 @@ li {
 .copyright {
     display: flex;
     justify-content: center;
-    color: #c5c8cc;
+    color: black;
+    font-weight: bold;
     font-size: 0.875rem;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     margin-top: 10px;
